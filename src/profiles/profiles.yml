@@ -1,12 +1,12 @@
 angona_kalitao:
   outputs:
     dev:
-      dbname: angona
+      dbname: postgres
       host: localhost
-      pass: rayan2026
+      pass: Rayan9568
       port: 5432
       schema: public
       threads: 1
       type: postgres
-      user: rayan
+      user: postgres
   target: dev
