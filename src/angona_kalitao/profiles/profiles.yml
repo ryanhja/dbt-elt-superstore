@@ -1,0 +1,12 @@
+angona_kalitao:
+  outputs:
+    dev:
+      dbname: angona
+      host: localhost
+      pass: rayan2026
+      port: 5432
+      schema: public
+      threads: 1
+      type: postgres
+      user: rayan
+  target: dev
