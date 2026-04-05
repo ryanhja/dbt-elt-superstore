@@ -21,6 +21,6 @@ with superstore as (
         "Quantity" as quantity,
         "Discount" as discount,
         "Profit" as profit
-    from public.superstore
+    from {{ source("src_superstore", "superstore")}}
 )
 select * from superstore

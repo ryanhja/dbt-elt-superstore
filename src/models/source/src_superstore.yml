@@ -1,0 +1,6 @@
+sources:
+  - name: src_superstore
+    database: superstore
+    schema: public
+    tables:
+    - name: superstore

@@ -13,6 +13,7 @@ snapshot-paths: ["snapshots"]
 clean-targets:
   - "target"
   - "dbt_packages"
+
 models:
   angona_kalitao:
     stating:
