@@ -17,6 +17,8 @@ clean-targets:
 models:
   angona_kalitao:
     marts:
+      +schema: marts
       +materialized: table
-    stating:
+    staging:
+      +schema: marts
       +materialized: view
