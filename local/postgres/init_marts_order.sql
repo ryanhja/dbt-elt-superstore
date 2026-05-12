@@ -1,0 +1,23 @@
+create table if not exists marts.product (
+	row_id int4 NULL,
+	order_id varchar(50) NULL,
+	order_date varchar(50) NULL,
+	ship_date varchar(50) NULL,
+	ship_mode varchar(50) NULL,
+	customer_id varchar(50) NULL,
+	customer_name varchar(50) NULL,
+	segment varchar(50) NULL,
+	country varchar(50) NULL,
+	city varchar(50) NULL,
+	state varchar(50) NULL,
+	postal_code int4 NULL,
+	region varchar(50) NULL,
+	product_id varchar(50) NULL,
+	category varchar(50) NULL,
+	subcategory varchar(50) NULL,
+	product_name varchar(128) NULL,
+	sales float4 NULL,
+	quantity int4 NULL,
+	discount float4 NULL,
+	profit float4 NULL
+);
