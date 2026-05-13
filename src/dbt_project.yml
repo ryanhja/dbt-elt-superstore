@@ -16,8 +16,11 @@ clean-targets:
 
 models:
   angona_kalitao:
-    marts:
-      +schema: marts
+    fact:
+      +schema: fact
+      +materialized: table
+    dim:
+      +schema: dim
       +materialized: table
     staging:
       +schema: marts
