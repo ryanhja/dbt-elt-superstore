@@ -23,5 +23,5 @@ models:
       +schema: dim
       +materialized: table
     staging:
-      +schema: marts
+      +schema: staging
       +materialized: view
