@@ -23,4 +23,26 @@ with superstore as (
         "Profit" as profit
     from {{ source("src_superstore", "superstore")}}
 )
-select * from superstore
+select
+    row_id,
+    order_id,
+    order_date,
+    ship_date,
+    ship_mode,
+    customer_id,
+    customer_name,
+    segment,
+    country,
+    city,
+    state,
+    postal_code,
+    region,
+    product_id,
+    category,
+    subcategory,
+    product_name,
+    sales,
+    quantity,
+    discount,
+    profit
+from superstore
