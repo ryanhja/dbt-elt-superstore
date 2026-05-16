@@ -1,4 +1,4 @@
-create table if not exists marts.product (
+create table if not exists dim.dim_product (
 	row_id int4 NULL,
 	order_id varchar(50) NULL,
 	order_date varchar(50) NULL,
