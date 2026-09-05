@@ -1,6 +1,6 @@
 with superstore as (
     select
-        to_char(to_date(ss.order_date, 'MM/DD/YYYY'), 'YYYYMMDD')::INT AS fk_date,
+        cast(to_char(to_date(ss.order_date, 'MM/DD/YYYY'), 'YYYYMMDD') as int) as fk_date,
         ss.customer_id,
         dl.location_id,
         ss.product_id

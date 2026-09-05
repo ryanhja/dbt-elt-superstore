@@ -1,4 +1,16 @@
 with product as (
-    select * from {{ ref("stg_superstore") }}
+    select
+        distinct
+            product_id as id,
+            category,
+            subcategory,
+            replace(product_name, E'\uFFFD', ' ') as product_name
+    from {{ ref("stg_superstore") }}
+    order by product_id
 )
-select * from product
+select
+    id,
+    category,
+    subcategory,
+    product_name
+from product
