@@ -9,7 +9,7 @@ with superstore as (
     from {{ ref("stg_superstore") }}
 )
 select
-    row_number() over (order by  country, region, state, city, postal_code) as location_id,
+    row_number() over (order by  country, region, state, city, postal_code) as id,
     country,
     city,
     state,
