@@ -3,7 +3,7 @@ with date_series as (
 		generate_series((current_date - interval '5 year')::date, (current_date)::date, interval '1 day')::date as date_day
 )
 select
-	cast(to_char(date_day, 'YYYYMMDD') as int) as date_id,
+	cast(to_char(date_day, 'YYYYMMDD') as int) as id,
 	date_day,
 	date_part('YEAR', date_day) as year,
 	date_part('QUARTER', date_day) as quarter,
