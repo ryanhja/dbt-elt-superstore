@@ -4,20 +4,17 @@ ENV DBT_HOME=/usr/app/dbt
 
 WORKDIR $DBT_HOME
 
-COPY dbt_project.yml profiles.yml packages.yml* ./
-COPY models/ ./models/
-COPY macros/ ./macros/
-COPY seeds/ ./seeds/
-COPY tests/ ./tests/
+COPY macros/ macros/
+COPY models/ models/
+COPY profiles/ profiles/
+COPY seeds/ seeds/
+COPY tests/ tests/
+COPY dbt_project.yml dbt_project.yml
+COPY requirements.txt requirements.txt
+COPY main.py main.py
 
 
-
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir dbt-core dbt-postgres
+RUN pip install --no-cache-dir -r requirements.txt
 
 
-
-RUN dbt deps
-
-
-CMD ["dbt", "run"]
+CMD ["python", "main.py"]
