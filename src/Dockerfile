@@ -1,18 +1,12 @@
 FROM python:3.11-slim
 
 ENV DBT_HOME=/usr/app/dbt
+ENV APPLICATION_NAME="dbt-elt-superstore"
+ENV APPLICATIOB_HOME=${DBT_HOME}/${APPLICATION_NAME}
 
-WORKDIR $DBT_HOME
+WORKDIR ${APPLICATIOB_HOME}
 
-COPY macros/ macros/
-COPY models/ models/
-COPY profiles/ profiles/
-COPY seeds/ seeds/
-COPY tests/ tests/
-COPY dbt_project.yml dbt_project.yml
-COPY requirements.txt requirements.txt
-COPY main.py main.py
-
+COPY . ${APPLICATIOB_HOME}
 
 RUN pip install --no-cache-dir -r requirements.txt
 
