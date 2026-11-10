@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: superstore
+      POSTGRES_PASSWORD: superstore
+      POSTGRES_DB: superstore
+
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/initdb/init_db.sql:/docker-entrypoint-initdb.d/01_init_db.sql
+      - ./postgres/initdb/init_public_superstore.sql:/docker-entrypoint-initdb.d/02_init_public_superstore.sql
+    ports:
+      - "5432:5432"
+
+networks:
+  default:
+    name: dbt_network

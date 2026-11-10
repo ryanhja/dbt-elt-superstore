@@ -3,6 +3,7 @@ target/
 dbt_packages/
 logs/
 venv/
-*.env
+.env
 *.idea
 .user.yml
+local/postgres/data/

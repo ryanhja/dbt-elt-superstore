@@ -1,0 +1,10 @@
+services:
+  dbt-elt-superstore:
+    image: dbt-elt-superstore:latest
+    container_name: dbt-elt-superstore
+    build: ../src/
+    env_file: docker.env
+
+networks:
+  default:
+    name: dbt_network
