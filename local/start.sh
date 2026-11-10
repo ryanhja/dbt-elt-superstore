@@ -1,7 +1,12 @@
 #!/bin/bash
 
-echo "Run project ..."
+echo "Run Database ..."
+docker compose -f compose.postgres.yaml up -d
+
+sleep 5
+
+echo "Run Project ..."
 docker compose up --build -d
 
 echo "Project logs"
-docker compose logs -f
+docker compose  -f compose.postgres.yaml -f compose.yaml logs -f
